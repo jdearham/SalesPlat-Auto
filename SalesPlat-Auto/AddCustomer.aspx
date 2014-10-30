@@ -57,7 +57,7 @@
             &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="New" />
         </ItemTemplate>
     </asp:FormView>
-    <asp:SqlDataSource ID="dsCustomer" runat="server" ConnectionString="<%$ ConnectionStrings:SalesPlatform-AutoConnectionString %>" DeleteCommand="DELETE FROM [Customer] WHERE [CustomerId] = @CustomerId" InsertCommand="INSERT INTO [Customer] ([Name], [Surname], [idNumber], [Bank]) VALUES (@Name, @Surname, @idNumber, @Bank)" SelectCommand="SELECT * FROM [Customer]" UpdateCommand="UPDATE [Customer] SET [Name] = @Name, [Surname] = @Surname, [idNumber] = @idNumber, [Bank] = @Bank WHERE [CustomerId] = @CustomerId" OnInserted="dsCustomer_Inserted">
+    <asp:SqlDataSource ID="dsCustomer" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [Customer] WHERE [CustomerId] = @CustomerId" InsertCommand="INSERT INTO [Customer] ([Name], [Surname], [idNumber], [Bank]) VALUES (@Name, @Surname, @idNumber, @Bank)" SelectCommand="SELECT * FROM [Customer]" UpdateCommand="UPDATE [Customer] SET [Name] = @Name, [Surname] = @Surname, [idNumber] = @idNumber, [Bank] = @Bank WHERE [CustomerId] = @CustomerId" OnInserted="dsCustomer_Inserted">
         <DeleteParameters>
             <asp:Parameter Name="CustomerId" Type="Int32" />
         </DeleteParameters>

@@ -39,7 +39,7 @@
             &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="New" />
         </ItemTemplate>
     </asp:FormView>
-    <asp:SqlDataSource ID="dsSalesMan" runat="server" ConnectionString="<%$ ConnectionStrings:SalesPlatform-AutoConnectionString %>" DeleteCommand="DELETE FROM [SalesMan] WHERE [SalesManId] = @SalesManId" InsertCommand="INSERT INTO [SalesMan] ([Name], [Surname]) VALUES (@Name, @Surname)" SelectCommand="SELECT * FROM [SalesMan]" UpdateCommand="UPDATE [SalesMan] SET [Name] = @Name, [Surname] = @Surname WHERE [SalesManId] = @SalesManId">
+    <asp:SqlDataSource ID="dsSalesMan" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [SalesMan] WHERE [SalesManId] = @SalesManId" InsertCommand="INSERT INTO [SalesMan] ([Name], [Surname]) VALUES (@Name, @Surname)" SelectCommand="SELECT * FROM [SalesMan]" UpdateCommand="UPDATE [SalesMan] SET [Name] = @Name, [Surname] = @Surname WHERE [SalesManId] = @SalesManId">
         <DeleteParameters>
             <asp:Parameter Name="SalesManId" Type="Int32" />
         </DeleteParameters>

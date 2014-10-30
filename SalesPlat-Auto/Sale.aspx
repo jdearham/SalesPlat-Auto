@@ -3,7 +3,7 @@
     Sales Person
 <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="dsSalesMan" DataTextField="Full Name" DataValueField="SalesManId">
 </asp:DropDownList>
-<asp:SqlDataSource ID="dsSalesMan" runat="server" ConnectionString="<%$ ConnectionStrings:SalesPlatform-AutoConnectionString %>" SelectCommand="SELECT SalesManId, Name, Surname, Name + ' ' + Surname AS [Full Name] FROM SalesMan"></asp:SqlDataSource>
+<asp:SqlDataSource ID="dsSalesMan" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT SalesManId, Name, Surname, Name + ' ' + Surname AS [Full Name] FROM SalesMan"></asp:SqlDataSource>
     <br />
     <asp:FormView ID="FormView1" runat="server" DataKeyNames="CustomerId" DataSourceID="dsCustomer">
         <EditItemTemplate>
@@ -60,7 +60,7 @@
 
         </ItemTemplate>
     </asp:FormView>
-    <asp:SqlDataSource ID="dsCustomer" runat="server" ConnectionString="<%$ ConnectionStrings:SalesPlatform-AutoConnectionString %>" SelectCommand="SELECT * FROM [Customer] WHERE ([CustomerId] = @CustomerId)">
+    <asp:SqlDataSource ID="dsCustomer" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Customer] WHERE ([CustomerId] = @CustomerId)">
         <SelectParameters>
             <asp:QueryStringParameter Name="CustomerId" QueryStringField="CustomerId" Type="Int32" />
         </SelectParameters>
@@ -69,7 +69,25 @@
 <br />
 <br />
     Select Car<asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="Button" />
-&nbsp;<asp:SqlDataSource ID="dsStockSelect" runat="server" ConnectionString="<%$ ConnectionStrings:SalesPlatform-AutoConnectionString %>" SelectCommand="SELECT * FROM [Stock]"></asp:SqlDataSource>
+&nbsp;<asp:SqlDataSource ID="dsStockSelect" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Stock] WHERE ([StockId] = @StockId)" DeleteCommand="DELETE FROM [Stock] WHERE [StockId] = @StockId" InsertCommand="INSERT INTO [Stock] ([Make], [Model], [Year]) VALUES (@Make, @Model, @Year)" UpdateCommand="UPDATE [Stock] SET [Make] = @Make, [Model] = @Model, [Year] = @Year WHERE [StockId] = @StockId">
+        <DeleteParameters>
+            <asp:Parameter Name="StockId" Type="Int32" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="Make" Type="String" />
+            <asp:Parameter Name="Model" Type="String" />
+            <asp:Parameter Name="Year" Type="Decimal" />
+        </InsertParameters>
+        <SelectParameters>
+            <asp:QueryStringParameter Name="StockId" QueryStringField="StockId" Type="Int32" />
+        </SelectParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="Make" Type="String" />
+            <asp:Parameter Name="Model" Type="String" />
+            <asp:Parameter Name="Year" Type="Decimal" />
+            <asp:Parameter Name="StockId" Type="Int32" />
+        </UpdateParameters>
+    </asp:SqlDataSource>
     <asp:DropDownList ID="DropDownList2" runat="server" AppendDataBoundItems="True" AutoPostBack="True" DataSourceID="dsStockSelect" DataTextField="Make" DataValueField="StockId">
         <asp:ListItem Value="0">Select Make</asp:ListItem>
     </asp:DropDownList>
@@ -120,7 +138,7 @@
 
         </ItemTemplate>
     </asp:FormView>
-    <asp:SqlDataSource ID="dsSelectedStock" runat="server" ConnectionString="<%$ ConnectionStrings:SalesPlatform-AutoConnectionString %>" OnSelecting="dsSelectedStock_Selecting" SelectCommand="SELECT * FROM [Stock] WHERE ([StockId] = @StockId)">
+    <asp:SqlDataSource ID="dsSelectedStock" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" OnSelecting="dsSelectedStock_Selecting" SelectCommand="SELECT * FROM [Stock] WHERE ([StockId] = @StockId)">
         <SelectParameters>
             <asp:QueryStringParameter Name="StockId" QueryStringField="StockId" Type="Int32" />
         </SelectParameters>
@@ -134,25 +152,12 @@
         <asp:BoundField DataField="Year" HeaderText="Year" SortExpression="Year" />
     </Columns>
 </asp:GridView>
-    <asp:SqlDataSource ID="dsStock" runat="server" ConnectionString="<%$ ConnectionStrings:SalesPlatform-AutoConnectionString %>" DeleteCommand="DELETE FROM [Stock] WHERE [StockId] = @StockId" InsertCommand="INSERT INTO [Stock] ([Make], [Model], [Year]) VALUES (@Make, @Model, @Year)" SelectCommand="SELECT * FROM [Stock] WHERE ([StockId] = @StockId)" UpdateCommand="UPDATE [Stock] SET [Make] = @Make, [Model] = @Model, [Year] = @Year WHERE [StockId] = @StockId">
-        <DeleteParameters>
-            <asp:Parameter Name="StockId" Type="Int32" />
-        </DeleteParameters>
-        <InsertParameters>
-            <asp:Parameter Name="Make" Type="String" />
-            <asp:Parameter Name="Model" Type="String" />
-            <asp:Parameter Name="Year" Type="Decimal" />
-        </InsertParameters>
+    <asp:SqlDataSource ID="dsStock" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Stock] WHERE ([StockId] = @StockId)">
         <SelectParameters>
-            <asp:ControlParameter ControlID="DropDownList2" Name="StockId" PropertyName="SelectedValue" Type="Int32" />
+            <asp:QueryStringParameter Name="StockId" QueryStringField="StockId" Type="Int32" />
         </SelectParameters>
-        <UpdateParameters>
-            <asp:Parameter Name="Make" Type="String" />
-            <asp:Parameter Name="Model" Type="String" />
-            <asp:Parameter Name="Year" Type="Decimal" />
-            <asp:Parameter Name="StockId" Type="Int32" />
-        </UpdateParameters>
     </asp:SqlDataSource>
+    <br />
 <br />
     <br />
 &nbsp;
