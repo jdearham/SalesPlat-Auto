@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Sale.aspx.cs" Inherits="SalesPlat_Auto.Sale" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    Sales Person
+    <br />
+    <br />
+    Sales Person&nbsp;
 <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="dsSalesMan" DataTextField="Full Name" DataValueField="SalesManId">
 </asp:DropDownList>
 <asp:SqlDataSource ID="dsSalesMan" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT SalesManId, Name, Surname, Name + ' ' + Surname AS [Full Name] FROM SalesMan"></asp:SqlDataSource>
@@ -92,7 +94,7 @@
         <asp:ListItem Value="0">Select Make</asp:ListItem>
     </asp:DropDownList>
     <br />
-    <asp:FormView ID="FormView2" runat="server" DataKeyNames="StockId" DataSourceID="dsSelectedStock">
+    <asp:FormView ID="FormView2" runat="server" DataKeyNames="StockId" DataSourceID="dsSelectedStock" Width="228px">
         <EditItemTemplate>
             StockId:
             <asp:Label ID="StockIdLabel1" runat="server" Text='<%# Eval("StockId") %>' />
