@@ -35,5 +35,10 @@ namespace SalesPlat_Auto
         {
             Response.Redirect("SelectStock.aspx");
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Invoice.aspx");
+        }
     }
 }

@@ -5,6 +5,7 @@
     Sales Person&nbsp;
 <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="dsSalesMan" DataTextField="Full Name" DataValueField="SalesManId">
 </asp:DropDownList>
+    <br />
 <asp:SqlDataSource ID="dsSalesMan" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT SalesManId, Name, Surname, Name + ' ' + Surname AS [Full Name] FROM SalesMan"></asp:SqlDataSource>
     <br />
     <asp:FormView ID="FormView1" runat="server" DataKeyNames="CustomerId" DataSourceID="dsCustomer">
@@ -67,10 +68,8 @@
             <asp:QueryStringParameter Name="CustomerId" QueryStringField="CustomerId" Type="Int32" />
         </SelectParameters>
     </asp:SqlDataSource>
-    <br />
 <br />
-<br />
-    Select Car<asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="Button" />
+    &nbsp;<asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="Select Vehicle" />
 &nbsp;<asp:SqlDataSource ID="dsStockSelect" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Stock] WHERE ([StockId] = @StockId)" DeleteCommand="DELETE FROM [Stock] WHERE [StockId] = @StockId" InsertCommand="INSERT INTO [Stock] ([Make], [Model], [Year]) VALUES (@Make, @Model, @Year)" UpdateCommand="UPDATE [Stock] SET [Make] = @Make, [Model] = @Model, [Year] = @Year WHERE [StockId] = @StockId">
         <DeleteParameters>
             <asp:Parameter Name="StockId" Type="Int32" />
@@ -90,9 +89,6 @@
             <asp:Parameter Name="StockId" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
-    <asp:DropDownList ID="DropDownList2" runat="server" AppendDataBoundItems="True" AutoPostBack="True" DataSourceID="dsStockSelect" DataTextField="Make" DataValueField="StockId">
-        <asp:ListItem Value="0">Select Make</asp:ListItem>
-    </asp:DropDownList>
     <br />
     <asp:FormView ID="FormView2" runat="server" DataKeyNames="StockId" DataSourceID="dsSelectedStock" Width="228px">
         <EditItemTemplate>
@@ -160,6 +156,7 @@
         </SelectParameters>
     </asp:SqlDataSource>
     <br />
+    <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Proceed" />
 <br />
     <br />
 &nbsp;
