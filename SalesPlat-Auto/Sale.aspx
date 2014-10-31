@@ -104,6 +104,12 @@
             Year:
             <asp:TextBox ID="YearTextBox" runat="server" Text='<%# Bind("Year") %>' />
             <br />
+            PurchasePrice:
+            <asp:TextBox ID="PurchasePriceTextBox" runat="server" Text='<%# Bind("PurchasePrice") %>' />
+            <br />
+            Colour:
+            <asp:TextBox ID="ColourTextBox" runat="server" Text='<%# Bind("Colour") %>' />
+            <br />
             <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
             &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
         </EditItemTemplate>
@@ -116,6 +122,12 @@
             <br />
             Year:
             <asp:TextBox ID="YearTextBox" runat="server" Text='<%# Bind("Year") %>' />
+            <br />
+            PurchasePrice:
+            <asp:TextBox ID="PurchasePriceTextBox" runat="server" Text='<%# Bind("PurchasePrice") %>' />
+            <br />
+            Colour:
+            <asp:TextBox ID="ColourTextBox" runat="server" Text='<%# Bind("Colour") %>' />
             <br />
             <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
             &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
@@ -134,6 +146,13 @@
             <asp:Label ID="YearLabel" runat="server" Text='<%# Bind("Year") %>' />
             <br />
 
+            PurchasePrice:
+            <asp:Label ID="PurchasePriceLabel" runat="server" Text='<%# Bind("PurchasePrice") %>' />
+            <br />
+            Colour:
+            <asp:Label ID="ColourLabel" runat="server" Text='<%# Bind("Colour") %>' />
+            <br />
+
         </ItemTemplate>
     </asp:FormView>
     <asp:SqlDataSource ID="dsSelectedStock" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" OnSelecting="dsSelectedStock_Selecting" SelectCommand="SELECT * FROM [Stock] WHERE ([StockId] = @StockId)">
@@ -148,6 +167,8 @@
         <asp:BoundField DataField="Make" HeaderText="Make" SortExpression="Make" />
         <asp:BoundField DataField="Model" HeaderText="Model" SortExpression="Model" />
         <asp:BoundField DataField="Year" HeaderText="Year" SortExpression="Year" />
+        <asp:BoundField DataField="PurchasePrice" HeaderText="PurchasePrice" SortExpression="PurchasePrice" />
+        <asp:BoundField DataField="Colour" HeaderText="Colour" SortExpression="Colour" />
     </Columns>
 </asp:GridView>
     <asp:SqlDataSource ID="dsStock" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Stock] WHERE ([StockId] = @StockId)">

@@ -14,6 +14,12 @@
             Year:
             <asp:TextBox ID="YearTextBox" runat="server" Text='<%# Bind("Year") %>' />
             <br />
+            PurchasePrice:
+            <asp:TextBox ID="PurchasePriceTextBox" runat="server" Text='<%# Bind("PurchasePrice") %>' />
+            <br />
+            Colour:
+            <asp:TextBox ID="ColourTextBox" runat="server" Text='<%# Bind("Colour") %>' />
+            <br />
             <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
             &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
         </EditItemTemplate>
@@ -26,6 +32,12 @@
             <br />
             Year:
             <asp:TextBox ID="YearTextBox" runat="server" Text='<%# Bind("Year") %>' />
+            <br />
+            PurchasePrice:
+            <asp:TextBox ID="PurchasePriceTextBox" runat="server" Text='<%# Bind("PurchasePrice") %>' />
+            <br />
+            Colour:
+            <asp:TextBox ID="ColourTextBox" runat="server" Text='<%# Bind("Colour") %>' />
             <br />
             <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
             &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
@@ -42,6 +54,12 @@
             <br />
             Year:
             <asp:Label ID="YearLabel" runat="server" Text='<%# Bind("Year") %>' />
+            <br />
+            PurchasePrice:
+            <asp:Label ID="PurchasePriceLabel" runat="server" Text='<%# Bind("PurchasePrice") %>' />
+            <br />
+            Colour:
+            <asp:Label ID="ColourLabel" runat="server" Text='<%# Bind("Colour") %>' />
             <br />
             <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit" />
             &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" />
