@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddStock.aspx.cs" Inherits="SalesPlat_Auto.AddStock" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="jumbotron">
+        <h2>Add a New stock Item</h2><br />
     <asp:FormView ID="FormView1" runat="server" DataKeyNames="StockId" DataSourceID="dsStock" DefaultMode="Insert">
         <EditItemTemplate>
             StockId:
@@ -22,7 +23,7 @@
             <asp:TextBox ID="ColourTextBox" runat="server" Text='<%# Bind("Colour") %>' />
             <br />
             <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
-            &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" />
         </EditItemTemplate>
         <InsertItemTemplate>
             Make:

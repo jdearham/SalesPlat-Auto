@@ -927,6 +927,7 @@ figure {
 }
 img {
   vertical-align: middle;
+    width: 14px;
 }
 .img-responsive,
 .thumbnail > img,
