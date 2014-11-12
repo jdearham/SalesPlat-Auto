@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="idNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Bank" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Sales" Relationship="Self.FK_Sale_Customer" FromRole="Customer" ToRole="Sale" />
+  </EntityType>
+  <EntityType Name="Sale">
+    <Key>
+      <PropertyRef Name="salesId" />
+    </Key>
+    <Property Name="salesId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SalesManId" Type="Int32" Nullable="false" />
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
+    <Property Name="StockId" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK_Sale_Customer" FromRole="Sale" ToRole="Customer" />
+    <NavigationProperty Name="SalesMan" Relationship="Self.FK_Sale_SalesMan" FromRole="Sale" ToRole="SalesMan" />
+    <NavigationProperty Name="Stock" Relationship="Self.FK_Sale_Stock" FromRole="Sale" ToRole="Stock" />
+  </EntityType>
+  <EntityType Name="SalesMan">
+    <Key>
+      <PropertyRef Name="SalesManId" />
+    </Key>
+    <Property Name="SalesManId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Sales" Relationship="Self.FK_Sale_SalesMan" FromRole="SalesMan" ToRole="Sale" />
+  </EntityType>
+  <EntityType Name="Stock">
+    <Key>
+      <PropertyRef Name="StockId" />
+    </Key>
+    <Property Name="StockId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Make" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Year" Type="Decimal" Precision="4" Scale="0" />
+    <Property Name="PurchasePrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Colour" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Sales" Relationship="Self.FK_Sale_Stock" FromRole="Stock" ToRole="Sale" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Sale_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Sale" Type="Self.Sale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerId" />
+      </Principal>
+      <Dependent Role="Sale">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sale_SalesMan">
+    <End Role="SalesMan" Type="Self.SalesMan" Multiplicity="1" />
+    <End Role="Sale" Type="Self.Sale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SalesMan">
+        <PropertyRef Name="SalesManId" />
+      </Principal>
+      <Dependent Role="Sale">
+        <PropertyRef Name="SalesManId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sale_Stock">
+    <End Role="Stock" Type="Self.Stock" Multiplicity="1" />
+    <End Role="Sale" Type="Self.Sale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="StockId" />
+      </Principal>
+      <Dependent Role="Sale">
+        <PropertyRef Name="StockId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Entities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="Sales" EntityType="Self.Sale" />
+    <EntitySet Name="SalesMen" EntityType="Self.SalesMan" />
+    <EntitySet Name="Stocks" EntityType="Self.Stock" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="FK_Sale_Customer" Association="Self.FK_Sale_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Sale" EntitySet="Sales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sale_SalesMan" Association="Self.FK_Sale_SalesMan">
+      <End Role="SalesMan" EntitySet="SalesMen" />
+      <End Role="Sale" EntitySet="Sales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sale_Stock" Association="Self.FK_Sale_Stock">
+      <End Role="Stock" EntitySet="Stocks" />
+      <End Role="Sale" EntitySet="Sales" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

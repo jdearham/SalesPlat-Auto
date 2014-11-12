@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddCustomer.aspx.cs" Inherits="SalesPlat_Auto.AddCustomer" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
    <div class="jumbotron">
+     <h2>Add a New Customer</h2><br />
      <asp:FormView ID="FormView1" runat="server" DataKeyNames="CustomerId" DataSourceID="dsCustomer" DefaultMode="Insert">
         <EditItemTemplate>
             CustomerId:

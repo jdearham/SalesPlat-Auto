@@ -6,13 +6,13 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: Page.Title %> - Sales Platform Auto</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
     <webopt:bundlereference runat="server" path="~/Content/css" />
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/favicon2.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
 <body>
@@ -78,7 +78,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - SalesPlat-Auto - Jdearham, Ggilbert</p>
+                <p>&copy; <%: DateTime.Now.Year %> - Sales Platform Auto by Dearham & Gilbert</p>
             </footer>
         </div>
     </form>
