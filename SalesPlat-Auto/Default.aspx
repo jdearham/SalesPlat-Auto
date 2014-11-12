@@ -5,9 +5,7 @@
     <div class="jumbotron">
         <h1>SalesPlatform - Auto</h1>
         <p class="lead">Vehicle Sales Application</p>
-        <p><a href="SelectCustomer.aspx" class="btn btn-primary btn-lg">Make a Sale »</a>&nbsp;
-            <a href="AddStock.aspx" class="btn btn-primary btn-lg">Add Stock »</a>&nbsp;
-            <a href="AddSalesMan.aspx" class="btn btn-primary btn-lg">Add SalesMan »</a></p>
+        <p>&nbsp;<a href="SelectCustomer.aspx" class="btn btn-primary btn-lg">Make a Sale »</a>&nbsp;<a href="AddStock.aspx" class="btn btn-primary btn-lg">Add Stock »</a>&nbsp;<a href="AddSalesMan.aspx" class="btn btn-primary btn-lg">Add SalesMan »</a></p>
     </div>
 
 </asp:Content>

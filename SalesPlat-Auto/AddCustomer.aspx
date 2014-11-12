@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddCustomer.aspx.cs" Inherits="SalesPlat_Auto.AddCustomer" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:FormView ID="FormView1" runat="server" DataKeyNames="CustomerId" DataSourceID="dsCustomer" DefaultMode="Insert">
+   <div class="jumbotron">
+     <asp:FormView ID="FormView1" runat="server" DataKeyNames="CustomerId" DataSourceID="dsCustomer" DefaultMode="Insert">
         <EditItemTemplate>
             CustomerId:
             <asp:Label ID="CustomerIdLabel1" runat="server" Text='<%# Eval("CustomerId") %>' />
@@ -75,4 +76,5 @@
             <asp:Parameter Name="CustomerId" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
+       </div>
 </asp:Content>

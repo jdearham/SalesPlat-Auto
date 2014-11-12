@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SelectStock.aspx.cs" Inherits="SalesPlat_Auto.SelectStock" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="StockId" DataSourceID="dsStock">
+  <div class="jumbotron">
+      <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="StockId" DataSourceID="dsStock">
         <Columns>
             <asp:BoundField DataField="StockId" HeaderText="StockId" InsertVisible="False" ReadOnly="True" SortExpression="StockId" />
             <asp:BoundField DataField="Make" HeaderText="Make" SortExpression="Make" />
@@ -25,4 +26,5 @@
             <asp:Parameter Name="StockId" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
+      </div>
 </asp:Content>

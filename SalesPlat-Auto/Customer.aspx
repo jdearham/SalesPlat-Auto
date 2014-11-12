@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Customer.aspx.cs" Inherits="SalesPlat_Auto.Customer" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="jumbotron">
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="CustomerId" DataSourceID="dsCustomer">
         <Columns>
             <asp:BoundField DataField="CustomerId" HeaderText="CustomerId" InsertVisible="False" ReadOnly="True" SortExpression="CustomerId" />
@@ -9,6 +10,8 @@
             <asp:HyperLinkField Text="Select" DataNavigateUrlFields="CustomerId" DataNavigateUrlFormatString="Sale.aspx?CustomerId={0}" />
         </Columns>
     </asp:GridView>
+    <br />
+    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Back" />
     <asp:SqlDataSource ID="dsCustomer" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [Customer] WHERE [CustomerId] = @CustomerId" InsertCommand="INSERT INTO [Customer] ([Name], [Surname], [idNumber], [Bank]) VALUES (@Name, @Surname, @idNumber, @Bank)" SelectCommand="SELECT * FROM [Customer]" UpdateCommand="UPDATE [Customer] SET [Name] = @Name, [Surname] = @Surname, [idNumber] = @idNumber, [Bank] = @Bank WHERE [CustomerId] = @CustomerId">
         <DeleteParameters>
             <asp:Parameter Name="CustomerId" Type="Int32" />
@@ -27,4 +30,5 @@
             <asp:Parameter Name="CustomerId" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
+        </div>
 </asp:Content>

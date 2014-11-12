@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddStock.aspx.cs" Inherits="SalesPlat_Auto.AddStock" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="jumbotron">
     <asp:FormView ID="FormView1" runat="server" DataKeyNames="StockId" DataSourceID="dsStock" DefaultMode="Insert">
         <EditItemTemplate>
             StockId:
@@ -82,4 +83,5 @@
             <asp:Parameter Name="StockId" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
+        </div>
 </asp:Content>
