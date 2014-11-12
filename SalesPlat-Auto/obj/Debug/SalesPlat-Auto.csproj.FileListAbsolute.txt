@@ -154,6 +154,3 @@ C:\Users\jdearham\Documents\GitHub\SalesPlat-Auto\SalesPlat-Auto\bin\Microsoft.O
 C:\Users\jdearham\Documents\GitHub\SalesPlat-Auto\SalesPlat-Auto\obj\Debug\SalesPlat-Auto.csprojResolveAssemblyReference.cache
 C:\Users\jdearham\Documents\GitHub\SalesPlat-Auto\SalesPlat-Auto\obj\Debug\SalesPlat-Auto.dll
 C:\Users\jdearham\Documents\GitHub\SalesPlat-Auto\SalesPlat-Auto\obj\Debug\SalesPlat-Auto.pdb
-C:\Users\Graham\Documents\GitHub\SalesPlat-Auto\SalesPlat-Auto\bin\nunit.framework.dll
-C:\Users\Graham\Documents\GitHub\SalesPlat-Auto\SalesPlat-Auto\bin\Tharga.Test.Toolkit.dll
-C:\Users\Graham\Documents\GitHub\SalesPlat-Auto\SalesPlat-Auto\bin\nunit.framework.xml
