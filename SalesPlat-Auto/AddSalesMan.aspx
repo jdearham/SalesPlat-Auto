@@ -18,14 +18,28 @@
             &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
         </EditItemTemplate>
         <InsertItemTemplate>
-            Name:
-            <asp:TextBox ID="NameTextBox" runat="server" Text='<%# Bind("Name") %>' />
+            <table style="width: 100%">
+                <tr>
+                    <td>Name:</td>
+                    <td>
+                        <asp:TextBox ID="NameTextBox" runat="server" Text='<%# Bind("Name") %>' />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Surname:</td>
+                    <td>
+                        <asp:TextBox ID="SurnameTextBox" runat="server" Text='<%# Bind("Surname") %>' />
+                    </td>
+                </tr>
+            </table>
+            &nbsp;<table style="width: 100%">
+                <tr>
+                    <td class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" BorderStyle="Solid" CausesValidation="False" CommandName="Cancel" PostBackUrl="~/Default.aspx" Text="Cancel" Width="85px" />
+                        <asp:LinkButton ID="InsertButton" runat="server" BorderStyle="Solid" CausesValidation="True" CommandName="Insert" Text="Insert" Width="85px" />
+                        &nbsp;</td>
+                </tr>
+            </table>
             <br />
-            Surname:
-            <asp:TextBox ID="SurnameTextBox" runat="server" Text='<%# Bind("Surname") %>' />
-            <br />
-            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
-            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
         </InsertItemTemplate>
         <ItemTemplate>
             SalesManId:

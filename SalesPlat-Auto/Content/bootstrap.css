@@ -132,6 +132,7 @@ input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   cursor: pointer;
+    text-align: left;
 }
 button[disabled],
 html input[disabled] {
@@ -996,7 +997,7 @@ h6,
 .h5,
 .h6 {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.1;
   color: #ffffff;
 }
@@ -4648,7 +4649,7 @@ a.list-group-item.active > .badge,
   margin-bottom: 15px;
   font-size: 21px;
   font-weight: 200;
-    text-align: left;
+    text-align: right;
 }
 .jumbotron > hr {
   border-top-color: #000000;
@@ -6347,6 +6348,7 @@ button.close {
 table,
 .table {
   color: #fff;
+    text-align: right;
 }
 table a:not(.btn),
 .table a:not(.btn) {
@@ -6462,4 +6464,5 @@ a.list-group-item-danger.active:focus {
 .jumbotron h5,
 .jumbotron h6 {
   color: #fff;
+    text-align: left;
 }

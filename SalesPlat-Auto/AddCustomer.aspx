@@ -24,20 +24,44 @@
             &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
         </EditItemTemplate>
         <InsertItemTemplate>
-            Name:
-            <asp:TextBox ID="NameTextBox" runat="server" Text='<%# Bind("Name") %>' />
+            <table style="width: 100%">
+                <tr>
+                    <td>Name: </td>
+                    <td>
+                        <asp:TextBox ID="NameTextBox" runat="server" Text='<%# Bind("Name") %>' />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Surname: </td>
+                    <td>
+                        <asp:TextBox ID="SurnameTextBox" runat="server" Text='<%# Bind("Surname") %>' />
+                    </td>
+                </tr>
+                <tr>
+                    <td>idNumber:</td>
+                    <td>
+                        <asp:TextBox ID="idNumberTextBox" runat="server" Text='<%# Bind("idNumber") %>' />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Bank:</td>
+                    <td>
+                        <asp:TextBox ID="BankTextBox" runat="server" Text='<%# Bind("Bank") %>' />
+                    </td>
+                </tr>
+            </table>
             <br />
-            Surname:
-            <asp:TextBox ID="SurnameTextBox" runat="server" Text='<%# Bind("Surname") %>' />
             <br />
-            idNumber:
-            <asp:TextBox ID="idNumberTextBox" runat="server" Text='<%# Bind("idNumber") %>' />
+            <table style="width: 100%">
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+                        <asp:LinkButton ID="InsertCancelButton" runat="server" BorderStyle="Solid" CausesValidation="False" CommandName="Cancel" Text="Cancel" Width="85px" />
+                        <asp:LinkButton ID="InsertButton" runat="server" BorderStyle="Solid" CausesValidation="True" CommandName="Insert" OnClick="InsertButton_Click" Text="Proceed" Width="85px" />
+                        &nbsp;</td>
+                </tr>
+            </table>
             <br />
-            Bank:
-            <asp:TextBox ID="BankTextBox" runat="server" Text='<%# Bind("Bank") %>' />
-            <br />
-            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Proceed" OnClick="InsertButton_Click" />
-            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            &nbsp;<br />&nbsp;<br />
         </InsertItemTemplate>
         <ItemTemplate>
             CustomerId:
