@@ -16,9 +16,9 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
-    <IISExpressUseClassicPipelineMode />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -166,6 +166,10 @@
     <Content Include="AddCustomer.aspx" />
     <Content Include="AddSalesMan.aspx" />
     <Content Include="AddStock.aspx" />
+    <Content Include="App_Data\aspnet-SalesPlat-Auto-20141030110300.mdf" />
+    <Content Include="App_Data\aspnet-SalesPlat-Auto-20141030110300_log.ldf">
+      <DependentUpon>aspnet-SalesPlat-Auto-20141030110300.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\SalesPlat-Auto.mdf" />
     <Content Include="App_Data\SalesPlat-Auto_log.ldf">
       <DependentUpon>SalesPlat-Auto.mdf</DependentUpon>
@@ -437,6 +441,7 @@
     </Compile>
     <Compile Include="Customer.cs">
       <DependentUpon>Model2.tt</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="C__MigrationHistory.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -499,6 +504,7 @@
     </Compile>
     <Compile Include="Sale.cs">
       <DependentUpon>Model2.tt</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="SalesMan.cs">
       <DependentUpon>Model2.tt</DependentUpon>
