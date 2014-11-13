@@ -11,7 +11,13 @@ namespace SalesPlat_Auto
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.TextBox1.Text = Request.QueryString["customerId"];
+            this.TextBox2.Text = Request.QueryString["salesmanId"];
+        }
 
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Invoice.aspx?customerId=" + this.TextBox1.Text + "&salesmanId=" + this.TextBox2.Text + "&stockId=" + this.DropDownList1.SelectedValue);
         }
     }
 }

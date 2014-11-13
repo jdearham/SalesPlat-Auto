@@ -42,7 +42,7 @@
             <asp:TextBox ID="ColourTextBox" runat="server" Text='<%# Bind("Colour") %>' />
             <br />
             <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
-            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" PostBackUrl="~/Default.aspx" />
         </InsertItemTemplate>
         <ItemTemplate>
             StockId:

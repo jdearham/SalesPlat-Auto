@@ -11,7 +11,7 @@ namespace SalesPlat_Auto
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            this.TextBox1.Text = Request.QueryString["CustomerId"];
         }
 
         //protected void Button1_Click(object sender, EventArgs e)
@@ -38,7 +38,8 @@ namespace SalesPlat_Auto
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            Response.Redirect("SelectStock.aspx");
+
+            Response.Redirect("SelectStock.aspx?customerId=" + this.TextBox1.Text + "&salesmanId=" + this.DropDownList1.SelectedValue);
         }
     }
 }
