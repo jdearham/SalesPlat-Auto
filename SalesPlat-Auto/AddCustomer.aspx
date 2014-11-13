@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddCustomer.aspx.cs" Inherits="SalesPlat_Auto.AddCustomer" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-   <div class="jumbotron">
+    <div class="jumbotron">
        <h1>SalesPlatform - Auto</h1>
      <h2>Add a New Customer</h2><br />
      <asp:FormView ID="FormView1" runat="server" DataKeyNames="CustomerId" DataSourceID="dsCustomer" DefaultMode="Insert">
@@ -55,7 +55,7 @@
             <table style="width: 100%">
                 <tr>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
-                        <asp:LinkButton ID="InsertCancelButton" runat="server" BorderStyle="Solid" CausesValidation="False" CommandName="Cancel" Text="Cancel" Width="85px" />
+                        <asp:LinkButton ID="InsertCancelButton" runat="server" BorderStyle="Solid" CausesValidation="False" CommandName="Cancel" Text="Cancel" Width="85px" PostBackUrl="~/Default.aspx" />
                         <asp:LinkButton ID="InsertButton" runat="server" BorderStyle="Solid" CausesValidation="True" CommandName="Insert" OnClick="InsertButton_Click" Text="Proceed" Width="85px" />
                         &nbsp;</td>
                 </tr>

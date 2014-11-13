@@ -18,6 +18,12 @@ namespace SalesPlat_Auto
         {
             SqlDataSource1.Insert();
             SqlDataSource2.Update();
+            Response.Redirect("default.aspx");
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("defautl.aspx");
         }
 
     }

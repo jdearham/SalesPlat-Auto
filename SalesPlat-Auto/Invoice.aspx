@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Invoice.aspx.cs" Inherits="SalesPlat_Auto.Invoice" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-     <div class="jumbotron">
+     <div class="jumbotron" style="text-align: right">
         <h1 class="text-left">SalesPlatform - Auto</h1>
          
          <br />
@@ -117,10 +117,14 @@
                  </td>
              </tr>
          </table>
+         <div class="text-right">
          <br />
-    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
+             <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Cancel" />
+&nbsp;&nbsp;&nbsp;
+    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Confirm" />
          <br />
     <br />
+         </div>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" InsertCommand="INSERT INTO [Sale] ([SalesManId], [CustomerId], [StockId], [Price]) VALUES (@SalesManId, @CustomerId, @StockId, @Price)" SelectCommand="SELECT * FROM [Sale]" UpdateCommand="UPDATE [Sale] SET [SalesManId] = @SalesManId, [CustomerId] = @CustomerId, [StockId] = @StockId, [Price] = @Price WHERE [salesId] = @salesId">
         <DeleteParameters>
             <asp:Parameter Name="salesId" Type="Int32" />
