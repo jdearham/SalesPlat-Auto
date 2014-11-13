@@ -19,5 +19,10 @@ namespace SalesPlat_Auto
         {
             Response.Redirect("Invoice.aspx?customerId=" + this.TextBox1.Text + "&salesmanId=" + this.TextBox2.Text + "&stockId=" + this.DropDownList1.SelectedValue);
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("default.aspx");
+        }
     }
 }

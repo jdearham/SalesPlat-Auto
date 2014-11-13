@@ -31,12 +31,12 @@ namespace SalesPlat_Auto
 
         }
 
-        protected void Button1_Click1(object sender, EventArgs e)
+        protected void BtnCancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect("SelectStock.aspx");
+            Response.Redirect("default.aspx");
         }
 
-        protected void Button2_Click(object sender, EventArgs e)
+        protected void BtnProceed_Click(object sender, EventArgs e)
         {
 
             Response.Redirect("SelectStock.aspx?customerId=" + this.TextBox1.Text + "&salesmanId=" + this.DropDownList1.SelectedValue);

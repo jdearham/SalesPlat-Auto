@@ -11,9 +11,9 @@
     <br />
           <asp:TextBox ID="TextBox1" runat="server" Visible="False"></asp:TextBox>
 <br />
-    <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Cancel"/>
+    <asp:Button ID="BtnCancel" runat="server" OnClick="BtnCancel_Click" Text="Cancel"/>
 
 &nbsp;
-    <asp:Button ID="Button3" runat="server" OnClick="Button2_Click" Text="Proceed" />
+    <asp:Button ID="BtnProceed" runat="server" OnClick="BtnProceed_Click" Text="Proceed" />
           </div>
     </asp:Content>

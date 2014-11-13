@@ -163,7 +163,11 @@
             <asp:QueryStringParameter Name="StockId" QueryStringField="stockid" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
-         <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Name + N' ' + Surname AS Customer, idNumber, Bank FROM Customer">
+         <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Name + ' ' + Surname AS Customer, idNumber, Bank FROM Customer
+ WHERE ([CustomerId] = @CustomerId)">
+             <SelectParameters>
+                 <asp:QueryStringParameter Name="CustomerId" QueryStringField="customerId" />
+             </SelectParameters>
          </asp:SqlDataSource>
          <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Name]+ ' ' +  [Surname] as Salesman FROM [SalesMan] WHERE ([SalesManId] = @SalesManId)">
              <SelectParameters>

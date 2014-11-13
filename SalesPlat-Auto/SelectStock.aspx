@@ -26,7 +26,7 @@
             <asp:Parameter Name="StockId" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
-        <asp:Button ID="Button1" runat="server" Text="Cancel" />
+        <asp:Button ID="Button1" runat="server" Text="Cancel" OnClick="Button1_Click" />
 &nbsp;
         <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Proceed" />
       </div>
