@@ -253,6 +253,7 @@
     <Content Include="SelectCustomer.aspx" />
     <Content Include="SelectStock.aspx" />
     <Content Include="Site.Master" />
+    <Content Include="viewStock.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -536,6 +537,13 @@
     </Compile>
     <Compile Include="sysdiagram.cs">
       <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="viewStock.aspx.cs">
+      <DependentUpon>viewStock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewStock.aspx.designer.cs">
+      <DependentUpon>viewStock.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

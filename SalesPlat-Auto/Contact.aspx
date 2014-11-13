@@ -2,6 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="jumbotron">
+        <h1>SalesPlatform - Auto</h1>
     <h2><%: Title %>.</h2>
     <h3>Your contact page.</h3>
     <address>

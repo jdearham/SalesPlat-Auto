@@ -153,3 +153,4 @@ C:\Users\jdearham\Documents\GitHub\SalesPlat-Auto\SalesPlat-Auto\bin\Microsoft.O
 C:\Users\jdearham\Documents\GitHub\SalesPlat-Auto\SalesPlat-Auto\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\jdearham\Documents\GitHub\SalesPlat-Auto\SalesPlat-Auto\obj\Debug\SalesPlat-Auto.dll
 C:\Users\jdearham\Documents\GitHub\SalesPlat-Auto\SalesPlat-Auto\obj\Debug\SalesPlat-Auto.pdb
+C:\Users\jdearham\Documents\GitHub\SalesPlat-Auto\SalesPlat-Auto\obj\Debug\SalesPlat-Auto.csprojResolveAssemblyReference.cache

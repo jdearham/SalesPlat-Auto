@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddSalesMan.aspx.cs" Inherits="SalesPlat_Auto.AddSalesMan" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="jumbotron">
+        <h1>SalesPlatform - Auto</h1>
         <h2>Add a New Salesman</h2><br />
     <asp:FormView ID="FormView1" runat="server" DataKeyNames="SalesManId" DataSourceID="dsSalesMan" DefaultMode="Insert">
         <EditItemTemplate>
