@@ -170,6 +170,7 @@
     <Content Include="App_Data\aspnet-SalesPlat-Auto-20141030110300_log.ldf">
       <DependentUpon>aspnet-SalesPlat-Auto-20141030110300.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\BSD License Agreement.txt" />
     <Content Include="App_Data\SalesPlat-Auto.mdf" />
     <Content Include="App_Data\SalesPlat-Auto_log.ldf">
       <DependentUpon>SalesPlat-Auto.mdf</DependentUpon>
