@@ -78,7 +78,8 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Sales Platform Auto by Dearham & Gilbert</p>
+                <p>&copy; <%: DateTime.Now.Year %> - Sales Platform Auto by Dearham & Gilbert&nbsp;<asp:HyperLink ID="HyperLink1" runat="server">Terms and Conditions</asp:HyperLink>
+&nbsp;apply</p>
             </footer>
         </div>
     </form>
