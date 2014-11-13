@@ -4,17 +4,17 @@
     <div class="jumbotron">
         <h1>SalesPlatform - Auto</h1>
     <h2><%: Title %>.</h2>
-    <h3>Your contact page.</h3>
+    <h3>Contact Details</h3>
     <address>
-        One Microsoft Way<br />
-        Redmond, WA 98052-6399<br />
+       Tennant Street<br />
+        Cape Town,8000<br />
         <abbr title="Phone">P:</abbr>
-        425.555.0100
+        02100000
     </address>
 
     <address>
-        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+        <strong>Support:</strong>   <a href="mailto:jdearham@gmail.com">jdearham@gmail.com</a><br />
+        <strong>Suggestions:</strong> <a href="mailto:graham.gilbert007@gmail.com">ggilbert@gmail.com</a>
     </address>
         </div>
 </asp:Content>
